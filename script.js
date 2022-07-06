@@ -1,7 +1,5 @@
 import { pokemonArray } from './data/pokemon.js';
 
-console.log(pokemonArray);
-
 const cardContainer = document.querySelector('.card-container');
 const input = document.querySelector('#input');
 const searchButton = document.querySelector('#search-button');
@@ -31,7 +29,6 @@ const displayCard = (pokemon, index) => {
 
 const search = (event) => {
     cardContainer.innerHTML = "";
-    console.log(input.value)
     const filteredPokemon = pokemonArray.filter((pokemon) => {
         //name filter
         if (input.value.toLowerCase() == pokemon.name) {
@@ -48,7 +45,6 @@ const search = (event) => {
 }
 
 const changeNoOfPokemons = (event) => {
-    console.log(event.target.value);
     cardContainer.innerHTML = "";
     const newList = pokemonArray.slice(0, parseInt(event.target.value));
     newList.forEach((pokemon, index) => {
