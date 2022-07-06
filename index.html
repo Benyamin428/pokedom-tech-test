@@ -16,7 +16,18 @@
   </head>
   <body>
     <h1>PokéDom- gotta code 'em all!</h1>
+    <label for="input">Search for pokemon</label>
+    <input type="text" id="input">
+    <button id="search-button">Search</button>
 
+    <label for="pokemons">Choose number of pokemons</label>
+    <select name="pokemons" id="pokemons">
+      <option value="151">All</option>
+      <option value="10">10</option>
+      <option value="50">50</option>
+      <option value="100">100</option>
+    </select> 
+  
     <main class="card-container"></main>
 
     <script src="./script.js" type="module"></script>
