@@ -7,12 +7,14 @@ const input = document.querySelector('#input');
 const searchButton = document.querySelector('#search-button');
 const noOfPokemons = document.querySelector('#pokemons');
 
+const capitaliseFirstLetter = (pokemon) => pokemon.name[0].toUpperCase()+pokemon.name.substring(1);
+
 const checkContents = (pokemon, index) => {
     if (pokemon.types.length == 1) {
-        return `<p class="card__text">${pokemon.name} (#${index}) is a ${pokemon.types[0]} type pokemon.</p>`
+        return `<p class="card__text">${capitaliseFirstLetter(pokemon)} (#${index}) is a ${pokemon.types[0]} type pokemon.</p>`
     }
     else {
-        return `<p class="card__text">${pokemon.name} (#${index}) is a ${pokemon.types[0]} and ${pokemon.types[1]} type pokemon.</p>`
+        return `<p class="card__text">${capitaliseFirstLetter(pokemon)} (#${index}) is a ${pokemon.types[0]} and ${pokemon.types[1]} type pokemon.</p>`
     }
 }
 
@@ -21,7 +23,7 @@ const displayCard = (pokemon, index) => {
     <div class="card"> 
     <img src=${pokemon.sprite} class="card__image">
     <div class="card__content">
-        <h1 class="card__heading">${pokemon.name}</h1>
+        <h1 class="card__heading">${capitaliseFirstLetter(pokemon)}</h1>
         ${checkContents(pokemon, index+1)}
     </div>
     </div>`
